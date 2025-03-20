@@ -7,18 +7,36 @@ const ReposList = ({ nomeUsuario }) => {
 
     const [repos, setRepos] = useState([]);
     const [estaCarregando, setEstaCarregando] = useState(true)
+    const [deuErro, setDeuErro] = useState(false)
+
+
     useEffect(() =>{
+        
+        setDeuErro(false)
+
         setEstaCarregando(true);
         
         fetch(`https://api.github.com/users/${nomeUsuario}/repos`)
-        .then(res => res.json())
+        .then(res => {
+        if(!res.ok){
+            throw new Error (`Erro ao buscar ${res.statusText}`)
+            }
+            return res.json()
+        })
         .then(resJson => {
             setTimeout(() => {
                 setEstaCarregando (false)
                 setRepos(resJson);
 
             }, 1000);
-        } );
+        } )
+        .catch(e  => {
+            setDeuErro(true)
+            console.log('deu erro ao buscar os repositorios', e)
+        })
+
+    
+
     }, [nomeUsuario])
 
     return (
