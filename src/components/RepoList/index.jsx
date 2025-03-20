@@ -10,7 +10,7 @@ const ReposList = ({ nomeUsuario }) => {
     useEffect(() =>{
         setEstaCarregando(true);
         
-        fetch(`https://api.github.com/users/${nomeUsuario}/repos`)
+        fetch(`https://api.github.com/users/${nomeUsuario}/repos`
         .then(res => res.json())
         .then(resJson => {
             setTimeout(() => {
