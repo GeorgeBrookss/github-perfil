@@ -1,0 +1,29 @@
+.list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+
+}
+
+.itemName{
+    list-style-type: none;
+    padding: 16px;
+    border: 1px solid var(--corSecundaria);
+
+}
+
+.itemName b, .itemLanguage b{
+    margin-right: 8px;
+}
+
+.itemLink{
+    display: block;
+    color: var(--corTexto);
+    background-image: linear-gradient(var(--corPrincipal1), var(--corSecundaria));
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
+    padding: 8px;
+    
+}
+

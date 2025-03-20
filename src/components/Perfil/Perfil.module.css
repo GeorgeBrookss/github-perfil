@@ -1,0 +1,26 @@
+.header{
+    background-image: linear-gradient(var(--corPrincipal1), var(--corSecundaria)) ;
+    display: flex;
+    flex-direction:  column;
+    padding: 180px 0 40px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.avatar{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 2px solid var(--corSecundaria);
+
+}
+
+.name{
+    margin-top: 4px;
+    font-size: 18px;
+    color: var(--corTexto);
+}
+
+.inputNome{
+    background-color: red;
+}
